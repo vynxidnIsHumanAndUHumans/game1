@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+<title>🚀 NEXUS MODE 999 AI | Time Multiplier + Ultimate Math</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Courier New', 'Consolas', monospace;
+    background: linear-gradient(45deg, #000000, #0a0a2e, #1a0033, #000000);
+    background-size: 400% 400%;
+    animation: nebula 10s ease infinite;
+    color: #00ffcc;
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+}
+
+@keyframes nebula {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.matrix-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0.08;
+    overflow: hidden;
+}
+
+.matrix-bg::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: repeating-linear-gradient(0deg, #00ffcc 1px, transparent 2px);
+    background-size: 100% 20px;
+    animation: scrollMatrix 20s linear infinite;
+}
+
+@keyframes scrollMatrix {
+    0% { transform: translateY(0); }
+    100% { transform: translateY(100%); }
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 10;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(45deg, #00ffcc, #ff00ff, #00ccff, #ffcc00);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: glow 2s ease-in-out infinite alternate;
+    text-shadow: 0 0 50px rgba(0, 255, 204, 0.5);
+    margin-bottom: 20px;
+}
+
+@keyframes glow {
+    from { filter: drop-shadow(0 0 10px #00ffcc); }
+    to { filter: drop-shadow(0 0 30px #ff00ff); }
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #88ffaa;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(136, 255, 170, 0.5);
+}
+
+.btn-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin: 30px 0;
+}
+
+.cyber-btn {
+    padding: 12px 25px;
+    border: 2px solid #00ffcc;
+    background: rgba(0, 0, 0, 0.8);
+    color: #00ffcc;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    min-width: 160px;
+}
+
+.cyber-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0,255,204,0.3), transparent);
+    transition: left 0.5s;
+}
+
+.cyber-btn:hover::before {
+    left: 100%;
+}
+
+.cyber-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 255, 204, 0.4);
+    border-color: #ff00ff;
+    color: #ff00ff;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.96);
+    backdrop-filter: blur(15px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    padding: 20px;
+}
+
+.game-box {
+    width: 95%;
+    max-width: 850px;
+    background: linear-gradient(135deg, rgba(10, 10, 50, 0.95), rgba(30, 0, 60, 0.95));
+    border: 3px solid #00ffcc;
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 0 80px rgba(0, 255, 204, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.game-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0,255,204,0.05) 0%, transparent 70%);
+    animation: rotate 20s linear infinite;
+}
+
+@keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.game-box > * { position: relative; z-index: 2; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.stat-item {
+    background: rgba(0, 255, 204, 0.1);
+    border: 1px solid rgba(0, 255, 204, 0.3);
+    padding: 12px;
+    border-radius: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-label {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+.stat-value {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #00ffcc;
+    text-shadow: 0 0 10px currentColor;
+}
+
+.timer {
+    font-size: 2.5rem;
+    color: #ff4444;
+    text-shadow: 0 0 20px currentColor;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+}
+
+.question-display {
+    background: rgba(0, 0, 0, 0.7);
+    border: 2px solid #ff00ff;
+    border-radius: 25px;
+    padding: 35px;
+    margin: 25px 0;
+    font-size: 2rem;
+    font-weight: bold;
+    min-height: 140px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-word;
+    box-shadow: inset 0 0 30px rgba(255, 0, 255, 0.2);
+}
+
+.answer-input {
+    width: 100%;
+    padding: 20px;
+    font-size: 1.8rem;
+    font-family: 'Courier New', monospace;
+    font-weight: bold;
+    background: rgba(0, 0, 0, 0.9);
+    border: 3px solid #00ffcc;
+    color: #00ffcc;
+    border-radius: 25px;
+    text-align: center;
+    margin: 20px 0;
+    transition: all 0.3s ease;
+}
+
+.answer-input:focus {
+    outline: none;
+    border-color: #ff00ff;
+    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5);
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.result-display {
+    min-height: 80px;
+    font-size: 1.3rem;
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 20px;
+    margin: 15px 0;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.result-correct {
+    background: rgba(0, 255, 0, 0.2);
+    border: 2px solid #00ff00;
+    color: #00ff00;
+    animation: correctFlash 0.5s ease;
+}
+
+.result-wrong {
+    background: rgba(255, 0, 0, 0.2);
+    border: 2px solid #ff0000;
+    color: #ff4444;
+    animation: wrongShake 0.3s ease;
+}
+
+@keyframes correctFlash {
+    0% { transform: scale(1); background: rgba(0,255,0,0); box-shadow: 0 0 0 0 #00ff00; }
+    50% { transform: scale(1.05); background: rgba(0,255,0,0.4); box-shadow: 0 0 30px 10px #00ff00; }
+    100% { transform: scale(1); background: rgba(0,255,0,0.2); }
+}
+
+@keyframes wrongShake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-10px); }
+    75% { transform: translateX(10px); }
+}
+
+.explanation {
+    background: rgba(255, 165, 0, 0.15);
+    border-left: 6px solid #ffaa00;
+    padding: 15px;
+    margin-top: 15px;
+    font-size: 1rem;
+    text-align: left;
+    border-radius: 15px;
+    line-height: 1.5;
+}
+
+.time-bonus-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffaa44;
+    text-shadow: 0 0 30px #ffaa44;
+    z-index: 2000;
+    animation: timeBonusFloat 1s ease forwards;
+    pointer-events: none;
+}
+
+@keyframes timeBonusFloat {
+    0% { opacity: 1; transform: translate(-50%, -50%) scale(0.5); }
+    50% { opacity: 1; transform: translate(-50%, -100%) scale(1.5); }
+    100% { opacity: 0; transform: translate(-50%, -150%) scale(2); }
+}
+
+.ai-badge {
+    background: linear-gradient(135deg, #4285f4, #34a853);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.level-up {
+    animation: levelUp 0.5s ease;
+}
+
+@keyframes levelUp {
+    0% { transform: scale(1); text-shadow: 0 0 0 #ffaa00; }
+    50% { transform: scale(1.3); text-shadow: 0 0 30px #ffaa00; }
+    100% { transform: scale(1); text-shadow: 0 0 10px #ffaa00; }
+}
+
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .question-display { font-size: 1.3rem; padding: 20px; }
+    .answer-input { font-size: 1.3rem; padding: 15px; }
+    .timer { font-size: 2rem; }
+    .stat-value { font-size: 1.4rem; }
+    .cyber-btn { padding: 10px 18px; font-size: 0.8rem; min-width: 120px; }
+}
+</style>
+</head>
+<body>
+<div class="matrix-bg"></div>
+
+<div class="container">
+    <h1>🚀 NEXUS MODE 999 AI</h1>
+    <p class="subtitle">⚡ TIME MULTIPLIER ⚡ | Correct Answer = Time × Bonus! <span class="ai-badge">ULTIMATE EDITION</span></p>
+    
+    <div class="btn-grid">
+        <button class="cyber-btn" onclick="startGame()">⚡ START MODE 999</button>
+        <button class="cyber-btn" onclick="loadGame()">💾 LOAD PROGRESS</button>
+        <button class="cyber-btn" onclick="showDailyFact()">🔔 DAILY FACT</button>
+        <button class="cyber-btn" onclick="aiChallenge()">🎲 AI CHALLENGE</button>
+    </div>
+    
+    <div style="font-size: 1rem; color: #88aaff; margin-top: 20px;">
+        <div>🏆 Best Score: <span id="bestScore">0</span></div>
+        <div>⭐ Max Level: <span id="maxLevel">1</span></div>
+        <div>🧠 AI Generated: <span id="aiCount">0</span></div>
+        <div>⏱️ Time Bonus: <span id="timeBonusStat">x1</span></div>
+    </div>
+</div>
+
+<div class="modal" id="gameModal">
+    <div class="game-box">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <div class="stat-label">LEVEL</div>
+                <div class="stat-value" id="levelDisplay">1</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">SCORE</div>
+                <div class="stat-value" id="scoreDisplay">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">STREAK</div>
+                <div class="stat-value" id="streakDisplay">0</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-label">TIME</div>
+                <div class="stat-value timer" id="timerDisplay">20</div>
+            </div>
+        </div>
+        
+        <div class="question-display" id="questionDisplay">Loading AI Challenge...</div>
+        
+        <input type="number" class="answer-input" id="answerInput" placeholder="✍️ Enter your answer..." step="any">
+        
+        <div class="action-grid">
+            <button class="cyber-btn" onclick="submitAnswer()">✅ SUBMIT</button>
+            <button class="cyber-btn" onclick="skipQuestion()">⏭️ SKIP</button>
+            <button class="cyber-btn" onclick="getAIHint()">💡 AI HINT</button>
+            <button class="cyber-btn" onclick="endGame()">🚪 EXIT</button>
+        </div>
+        
+        <div class="result-display" id="resultDisplay"></div>
+        <div class="explanation" id="explanationDisplay"></div>
+    </div>
+</div>
+
+<script>
+// ==================== NEXUS AI ENGINE ULTIMATE ====================
+let gameState = {
+    score: 0,
+    level: 1,
+    streak: 0,
+    bestScore: 0,
+    maxLevel: 1,
+    aiCount: 0,
+    timeLeft: 20,
+    timeBonusMultiplier: 1,
+    timerInterval: null,
+    currentQuestion: null,
+    currentAnswer: null,
+    currentExplanation: null,
+    isActive: false
+};
+
+// ==================== DATABASE SOAL MATEMATIKA SUPER LENGKAP ====================
+const questionDatabase = {
+    basic: (level) => {
+        let maxNum = Math.floor(30 + level * 2);
+        let a = Math.floor(Math.random() * maxNum) + 1;
+        let b = Math.floor(Math.random() * maxNum) + 1;
+        let ops = ['+', '-', '×', '÷'][Math.floor(Math.random() * 4)];
+        if (ops === '+') return { q: `${a} + ${b}`, a: a + b, exp: `${a} + ${b} = ${a + b}` };
+        if (ops === '-') return { q: `${Math.max(a,b)} - ${Math.min(a,b)}`, a: Math.abs(a - b), exp: `${Math.max(a,b)} - ${Math.min(a,b)} = ${Math.abs(a - b)}` };
+        if (ops === '×') return { q: `${a} × ${b}`, a: a * b, exp: `${a} × ${b} = ${a * b}` };
+        if (ops === '÷') {
+            let result = Math.floor(Math.random() * 15) + 1;
+            let divisor = Math.floor(Math.random() * 12) + 1;
+            return { q: `${result * divisor} ÷ ${divisor}`, a: result, exp: `${result * divisor} ÷ ${divisor} = ${result}` };
+        }
+    },
+    algebra: (level) => {
+        let x = Math.floor(Math.random() * (15 + level)) + 1;
+        let coeff = Math.floor(Math.random() * 6) + 2;
+        let constTerm = Math.floor(Math.random() * 40) + 5;
+        let result = coeff * x + constTerm;
+        return { q: `${coeff}x + ${constTerm} = ${result}`, a: x, exp: `${coeff}x = ${result - constTerm} → x = ${(result - constTerm) / coeff} = ${x}` };
+    },
+    geometry: (level) => {
+        let type = Math.floor(Math.random() * 5);
+        if (type === 0) {
+            let side = Math.floor(Math.random() * 25) + 3;
+            return { q: `Luas persegi (s=${side})`, a: side * side, exp: `L = s² = ${side}² = ${side * side}` };
+        } else if (type === 1) {
+            let p = Math.floor(Math.random() * 35) + 5;
+            let l = Math.floor(Math.random() * 25) + 3;
+            return { q: `Luas persegi panjang (p=${p}, l=${l})`, a: p * l, exp: `L = p × l = ${p} × ${l} = ${p * l}` };
+        } else if (type === 2) {
+            let r = Math.floor(Math.random() * 15) + 2;
+            return { q: `Luas lingkaran (r=${r}, π=3.14)`, a: Math.round(3.14 * r * r), exp: `L = πr² = 3.14 × ${r}² = ${Math.round(3.14 * r * r)}` };
+        } else {
+            let a = Math.floor(Math.random() * 15) + 3;
+            let t = Math.floor(Math.random() * 15) + 3;
+            return { q: `Luas segitiga (a=${a}, t=${t})`, a: 0.5 * a * t, exp: `L = ½ × a × t = ½ × ${a} × ${t} = ${0.5 * a * t}` };
+        }
+    },
+    finance: (level) => {
+        let type = Math.floor(Math.random() * 4);
+        if (type === 0) {
+            let price = Math.floor(Math.random() * 500000) + 50000;
+            let discount = Math.floor(Math.random() * 50) + 5;
+            return { q: `Harga Rp ${price.toLocaleString()}, diskon ${discount}%`, a: Math.round(price * (1 - discount/100)), exp: `Harga akhir = ${price} × (1 - ${discount}/100) = ${Math.round(price * (1 - discount/100))}` };
+        } else {
+            let modal = Math.floor(Math.random() * 2000000) + 100000;
+            let percent = Math.floor(Math.random() * 40) + 5;
+            return { q: `Modal Rp ${modal.toLocaleString()}, untung ${percent}%`, a: Math.round(modal * percent / 100), exp: `Untung = ${modal} × ${percent}/100 = ${Math.round(modal * percent / 100)}` };
+        }
+    },
+    statistics: (level) => {
+        let nums = [];
+        for (let i = 0; i < 5; i++) nums.push(Math.floor(Math.random() * 60) + 10);
+        let sum = nums.reduce((a,b) => a + b, 0);
+        return { q: `Rata-rata dari ${nums.join(', ')}`, a: Math.round(sum / 5 * 10) / 10, exp: `Jumlah = ${sum} → Rata-rata = ${sum}/5 = ${(sum/5).toFixed(1)}` };
+    },
+    trig: (level) => {
+        let angles = [0, 30, 45, 60, 90, 180];
+        let angle = angles[Math.floor(Math.random() * angles.length)];
+        let func = Math.random() > 0.5 ? 'sin' : 'cos';
+        let value = func === 'sin' ? Math.sin(angle * Math.PI / 180) : Math.cos(angle * Math.PI / 180);
+        return { q: `${func} ${angle}°`, a: Math.round(value * 1000) / 1000, exp: `${func} ${angle}° = ${value.toFixed(3)} (nilai istimewa)` };
+    },
+    log: (level) => {
+        let base = Math.floor(Math.random() * 4) + 2;
+        let power = Math.floor(Math.random() * 4) + 1;
+        let num = Math.pow(base, power);
+        return { q: `log₍${base}₎ ${num}`, a: power, exp: `${base}^? = ${num} → ? = ${power}` };
+    },
+    expo: (level) => {
+        let base = Math.floor(Math.random() * 6) + 2;
+        let power = Math.floor(Math.random() * 5) + 2;
+        return { q: `${base}^${power}`, a: Math.pow(base, power), exp: `${base} pangkat ${power} = ${Math.pow(base, power)}` };
+    },
+    quadratic: (level) => {
+        let a = Math.floor(Math.random() * 3) + 1;
+        let b = Math.floor(Math.random() * 8) + 2;
+        let c = Math.floor(Math.random() * 10) + 1;
+        let x = Math.floor(Math.random() * 8) + 1;
+        let result = a * x * x + b * x + c;
+        return { q: `Jika f(x)=${a}x²+${b}x+${c}, f(${x})=?`, a: result, exp: `f(${x}) = ${a}×${x}² + ${b}×${x} + ${c} = ${result}` };
+    },
+    sequence: (level) => {
+        let first = Math.floor(Math.random() * 10) + 1;
+        let diff = Math.floor(Math.random() * 5) + 1;
+        let n = Math.floor(Math.random() * 8) + 2;
+        let result = first + (n-1) * diff;
+        return { q: `Suku ke-${n} dari barisan aritmatika ${first}, ${first+diff}, ${first+2*diff}, ...`, a: result, exp: `Un = a + (n-1)b = ${first} + (${n}-1)×${diff} = ${result}` };
+    }
+};
+
+const categoryList = ['basic', 'algebra', 'geometry', 'finance', 'statistics', 'trig', 'log', 'expo', 'quadratic', 'sequence'];
+
+// ==================== AI GENERATOR ====================
+function generateAIQuestion() {
+    gameState.aiCount++;
+    updateDashboard();
+    
+    let level = gameState.level;
+    let category;
+    
+    if (level < 3) category = 'basic';
+    else if (level < 6) category = ['basic', 'algebra', 'geometry'][Math.floor(Math.random() * 3)];
+    else if (level < 12) category = categoryList[Math.floor(Math.random() * 6)];
+    else category = categoryList[Math.floor(Math.random() * categoryList.length)];
+    
+    let generator = questionDatabase[category];
+    let question = generator(level);
+    
+    if (level > 10) {
+        let extra = Math.floor(Math.random() * (level / 5)) + 1;
+        if (Math.random() > 0.6) {
+            question.q = `(${question.q}) + ${extra}`;
+            question.a += extra;
+            question.exp += ` + ${extra} = ${question.a}`;
+        }
+    }
+    
+    return {
+        text: question.q + ' = ?',
+        answer: typeof question.a === 'number' ? parseFloat(question.a.toFixed(4)) : question.a,
+        explanation: question.exp,
+        category: category
+    };
+}
+
+// ==================== TIME MULTIPLIER & BONUS ANIMASI ====================
+function showTimeBonusAnimation(bonusTime) {
+    const animDiv = document.createElement('div');
+    animDiv.className = 'time-bonus-animation';
+    animDiv.innerHTML = `⏱️ +${bonusTime.toFixed(1)}s ⚡`;
+    document.body.appendChild(animDiv);
+    setTimeout(() => animDiv.remove(), 1000);
+    
+    // Flash effect pada timer
+    const timerElem = document.getElementById('timerDisplay');
+    timerElem.style.animation = 'none';
+    timerElem.offsetHeight;
+    timerElem.style.animation = 'pulse 0.3s ease 3';
+    timerElem.style.color = '#ffaa44';
+    setTimeout(() => {
+        timerElem.style.color = '#ff4444';
+        timerElem.style.animation = 'pulse 1s infinite';
+    }, 800);
+}
+
+// ==================== GAME FUNCTIONS ====================
+function startGame() {
+    gameState.isActive = true;
+    gameState.score = 0;
+    gameState.level = 1;
+    gameState.streak = 0;
+    gameState.timeLeft = 20;
+    gameState.timeBonusMultiplier = 1;
+    
+    document.getElementById('gameModal').style.display = 'flex';
+    updateDisplay();
+    document.getElementById('timeBonusStat').textContent = 'x1';
+    nextQuestion();
+}
+
+function nextQuestion() {
+    if (gameState.timerInterval) clearInterval(gameState.timerInterval);
+    
+    gameState.timeLeft = Math.max(8, Math.floor(20 - gameState.level / 5 + (gameState.timeBonusMultiplier - 1) * 2));
+    if (gameState.timeLeft < 5) gameState.timeLeft = 5;
+    document.getElementById('timerDisplay').textContent = gameState.timeLeft;
+    
+    gameState.timerInterval = setInterval(() => {
+        if (!gameState.isActive) return;
+        gameState.timeLeft = Math.max(0, gameState.timeLeft - 0.1);
+        document.getElementById('timerDisplay').textContent = gameState.timeLeft.toFixed(1);
+        
+        if (gameState.timeLeft <= 0) {
+            clearInterval(gameState.timerInterval);
+            gameState.streak = 0;
+            gameState.timeBonusMultiplier = 1;
+            showResult(false, '⏰ TIME\'S UP!');
+            updateDisplay();
+            setTimeout(() => nextQuestion(), 1500);
+        }
+    }, 100);
+    
+    let q = generateAIQuestion();
+    gameState.currentQuestion = q.text;
+    gameState.currentAnswer = q.answer;
+    gameState.currentExplanation = q.explanation;
+    
+    document.getElementById('questionDisplay').textContent = q.text;
+    document.getElementById('answerInput').value = '';
+    document.getElementById('resultDisplay').innerHTML = '';
+    document.getElementById('explanationDisplay').innerHTML = '';
+    updateDisplay();
+}
+
+function submitAnswer() {
+    if (!gameState.isActive) return;
+    
+    let userAnswer = parseFloat(document.getElementById('answerInput').value);
+    if (isNaN(userAnswer)) {
+        alert('Masukkan angka yang valid!');
+        return;
+    }
+    
+    let tolerance = 0.01;
+    let isCorrect = Math.abs(userAnswer - gameState.currentAnswer) <= tolerance;
+    let remainingTime = gameState.timeLeft;
+    
+    if (isCorrect) {
+        clearInterval(gameState.timerInterval);
+        
+        let points = Math.floor(10 * gameState.level * (1 + gameState.streak / 15) * (1 + remainingTime / 30));
+        gameState.score += points;
+        gameState.streak++;
+        
+        // TIME MULTIPLIER: waktu dikalikan dengan sisa waktu sebelumnya
+        let timeBonus = remainingTime * 0.3;
+        if (timeBonus > 0) {
+            gameState.timeBonusMultiplier = Math.min(3, gameState.timeBonusMultiplier + 0.1);
+            showTimeBonusAnimation(timeBonus);
+        }
+        
+        if (gameState.streak >= 3 && gameState.streak % 3 === 0) {
+            gameState.level++;
+            document.getElementById('levelDisplay').classList.add('level-up');
+            setTimeout(() => document.getElementById('levelDisplay').classList.remove('level-up'), 500);
+            showResult(true, `🎉 LEVEL UP! +${points} points! Time Bonus x${gameState.timeBonusMultiplier.toFixed(1)} 🎉`);
+        } else {
+            showResult(true, `✅ CORRECT! +${points} pts | Time Bonus: ${timeBonus.toFixed(1)}s | Multiplier: x${gameState.timeBonusMultiplier.toFixed(1)}`);
+        }
+        
+        if (gameState.level > gameState.maxLevel) gameState.maxLevel = gameState.level;
+        if (gameState.score > gameState.bestScore) gameState.bestScore = gameState.score;
+        
+        document.getElementById('timeBonusStat').textContent = `x${gameState.timeBonusMultiplier.toFixed(1)}`;
+    } else {
+        showResult(false, `❌ WRONG! Jawaban: ${gameState.currentAnswer}`);
+        gameState.streak = 0;
+        gameState.timeBonusMultiplier = 1;
+        document.getElementById('timeBonusStat').textContent = 'x1';
+        clearInterval(gameState.timerInterval);
+    }
+    
+    updateDisplay();
+    updateDashboard();
+    
+    if (isCorrect) {
+        setTimeout(() => nextQuestion(), 1200);
+    } else {
+        setTimeout(() => nextQuestion(), 1500);
+    }
+}
+
+function skipQuestion() {
+    clearInterval(gameState.timerInterval);
+    showResult(false, `⏭️ SKIPPED | Jawaban: ${gameState.currentAnswer}`);
+    gameState.streak = 0;
+    gameState.timeBonusMultiplier = 1;
+    document.getElementById('timeBonusStat').textContent = 'x1';
+    updateDisplay();
+    setTimeout(() => nextQuestion(), 1200);
+}
+
+function getAIHint() {
+    let hint = gameState.currentExplanation;
+    document.getElementById('explanationDisplay').innerHTML = `🤖 AI HINT: ${hint}`;
+    document.getElementById('explanationDisplay').style.background = 'rgba(0,255,204,0.2)';
+    setTimeout(() => {
+        document.getElementById('explanationDisplay').style.background = 'rgba(255,165,0,0.15)';
+    }, 4000);
+}
+
+function showResult(isCorrect, message) {
+    let resultDiv = document.getElementById('resultDisplay');
+    resultDiv.innerHTML = message;
+    resultDiv.className = 'result-display ' + (isCorrect ? 'result-correct' : 'result-wrong');
+    
+    if (gameState.currentExplanation && !isCorrect) {
+        document.getElementById('explanationDisplay').innerHTML = `📚 ${gameState.currentExplanation}`;
+    }
+}
+
+function updateDisplay() {
+    document.getElementById('levelDisplay').textContent = gameState.level;
+    document.getElementById('scoreDisplay').textContent = Math.floor(gameState.score);
+    document.getElementById('streakDisplay').textContent = gameState.streak;
+    document.getElementById('timerDisplay').textContent = gameState.timeLeft.toFixed(1);
+}
+
+function updateDashboard() {
+    document.getElementById('bestScore').textContent = gameState.bestScore;
+    document.getElementById('maxLevel').textContent = gameState.maxLevel;
+    document.getElementById('aiCount').textContent = gameState.aiCount;
+}
+
+function endGame() {
+    gameState.isActive = false;
+    if (gameState.timerInterval) clearInterval(gameState.timerInterval);
+    document.getElementById('gameModal').style.display = 'none';
+    saveGame();
+    
+    alert(`🏆 GAME OVER 🏆\n\n📊 Score: ${Math.floor(gameState.score)}\n⭐ Level: ${gameState.level}\n🔥 Max Streak: ${gameState.streak}\n🧠 AI Generated: ${gameState.aiCount} soal\n\n"Waktu adalah bonus terbesar!"`);
+}
+
+function saveGame() {
+    localStorage.setItem('nexus999_save', JSON.stringify({
+        bestScore: gameState.bestScore,
+        maxLevel: gameState.maxLevel,
+        aiCount: gameState.aiCount
+    }));
+}
+
+function loadGame() {
+    let saved = localStorage.getItem('nexus999_save');
+    if (saved) {
+        let data = JSON.parse(saved);
+        if (confirm(`Load progress?\n🏆 Best Score: ${data.bestScore}\n⭐ Max Level: ${data.maxLevel}`)) {
+            gameState.bestScore = data.bestScore;
+            gameState.maxLevel = data.maxLevel;
+            gameState.aiCount = data.aiCount;
+            updateDashboard();
+            alert('Progress loaded!');
+        }
+    } else {
+        alert('No saved game found!');
+    }
+}
+
+function showDailyFact() {
+    const facts = [
+        "🧠 Otak manusia memiliki 86 miliar neuron!",
+        "📐 π (Pi) memiliki triliunan digit!",
+        "⚡ Kecepatan cahaya = 299.792.458 m/s!",
+        "🌍 Matematika adalah bahasa universal!",
+        "💡 Einstein: 'Imajinasi lebih penting dari pengetahuan'",
+        "🔢 0.999... = 1 dalam matematika!",
+        "🎲 Dadu tertua berusia 5000 tahun!",
+        "📊 Fibonacci muncul di alam: bunga, galaksi!"
+    ];
+    alert(`🔔 DAILY FACT\n\n${facts[Math.floor(Math.random() * facts.length)]}\n\nTetap semangat! 🚀`);
+}
+
+function aiChallenge() {
+    let challenge = generateAIQuestion();
+    alert(`🎲 AI CHALLENGE!\n\nSoal: ${challenge.text}\n\nJawaban: ${challenge.answer}\n\n${challenge.explanation}`);
+}
+
+setInterval(() => { if (gameState.isActive) saveGame(); }, 30000);
+updateDashboard();
+console.log('🚀 NEXUS MODE 999 | Time Multiplier Activated!');
+</script>
+</body>
+</html>
